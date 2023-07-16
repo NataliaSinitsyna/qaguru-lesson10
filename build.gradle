@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'guru.qa'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3',
+                        'org.junit.jupiter:junit-jupiter-engine:5.8.1',
+                        'com.codeborne:selenide:6.10.1',
+                        'org.assertj:assertj-core:3.23.1',
+                        'com.codeborne:pdf-test:1.7.0',
+                        'com.codeborne:xls-test:1.4.3',
+                        'com.opencsv:opencsv:5.7.1',
+                        'com.fasterxml.jackson.core:jackson-core:2.14.2',
+                        'com.fasterxml.jackson.core:jackson-databind:2.14.2',
+                        'org.projectlombok:lombok:1.18.22',
+                        'com.opencsv:opencsv:5.7.1',
+                        'com.fasterxml.jackson.core:jackson-core:2.13.1'
+
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
